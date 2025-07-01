@@ -1,0 +1,79 @@
+:root {
+  --primary-color: #1e2a38;
+  --accent-color: #daa520;
+  --secondary-color: #2e8b8b;
+  --background-color: #f8f9fa;
+  --text-color: #333333;
+}
+
+.contactContainer {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 4rem 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contactHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.gradientHeading {
+  font-size: 3rem;
+  background-image: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.contactHeader p {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+.contactDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+}
+
+.contactInfo {
+  flex: 1 1 40%;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.contactForm {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactForm input,
+.contactForm textarea {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.contactForm button {
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contactForm button:hover {
+  background-color: var(--accent-color);
+}

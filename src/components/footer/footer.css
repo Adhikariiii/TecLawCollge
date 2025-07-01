@@ -1,0 +1,95 @@
+.footer {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 3rem 2rem 1rem;
+  margin-top: 4rem;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.footerTop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footerBrand {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footerLogo {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+.footerBrand p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--background-color);
+}
+
+.footerLinks {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footerLinks h4,
+.footerContact h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.footerLinks ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 0.5rem;
+}
+
+.footerLinks a {
+  color: var(--background-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footerLinks a:hover {
+  color: var(--accent-color);
+}
+
+.footerContact {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footerContact p {
+  margin-bottom: 0.5rem;
+  color: var(--background-color);
+}
+
+.footerSocial {
+  margin-top: 1rem;
+}
+
+.footerSocial a {
+  color: var(--background-color);
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.footerSocial a:hover {
+  color: var(--accent-color);
+}
+
+.footerBottom {
+  border-top: 1px solid var(--secondary-color);
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}

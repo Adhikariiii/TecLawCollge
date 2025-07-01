@@ -1,0 +1,53 @@
+:root {
+  --primary-color: #1e2a38;
+  --accent-color: #daa520;
+  --secondary-color: #2e8b8b;
+  --background-color: #f8f9fa;
+  --text-color: #333333;
+}
+
+.locationContainer {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 4rem 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.locationHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.locationHeader h1 {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+}
+
+.locationHeader p {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+.addressSection,
+.mapSection {
+  margin-bottom: 3rem;
+}
+
+.addressSection h2,
+.mapSection h2 {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.addressSection p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.mapContainer {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}

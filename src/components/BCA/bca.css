@@ -1,0 +1,146 @@
+:root {
+  --primary-color: #1e2a38; /* Navy Blue */
+  --accent-color: #daa520; /* Gold */
+  --secondary-color: #2e8b8b;
+  --background-color: #f8f9fa;
+  --text-color: #333333;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "ubuntu", sans-serif;
+}
+.courseContainer {
+  width: 100vw;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.courseImage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 0;
+}
+.courseImage h1 {
+  position: relative;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #daa520, #2e8b8b);
+  font-size: 2.5rem;
+  filter: brightness(2);
+}
+.courseImage p {
+  color: var(--primary-color);
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px hsla(0, 0%, 100%, 0.14);
+}
+
+.courseImage {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.courseHeading {
+  padding: 1rem;
+  height: 50vh;
+  width: 60%;
+  margin: 1.5rem;
+}
+
+.courseDescription {
+  margin-top: 2rem;
+
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.courseDescription h2 {
+  font-size: 2rem;
+  background-color: white;
+}
+.courseCovers {
+  position: relative;
+  height: 100%;
+  width: auto;
+  margin: 2rem;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  line-height: 3rem;
+  padding: 3rem;
+  background-color: var(--background-color);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.courseCovers::before {
+  content: "";
+  z-index: -1;
+  inset: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+}
+.courseDuration {
+  height: 50vh;
+  width: 100%;
+  margin: 2rem;
+  font-size: 1.5rem;
+}
+.buttonContainer {
+  margin-top: 2rem;
+  margin-right: 5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.semesterButton {
+  gap: 1rem;
+  margin: 1rem;
+  font-size: 1rem;
+  background-color: #1976d2;
+  color: white;
+  font-size: 1rem;
+  padding: 2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
+  animation: float 2.5s ease-in-out infinite;
+}
+.semesterButton:hover {
+  background-color: #0d47a1;
+}
+.semesterContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  width: 30rem;
+  margin-left: 50%;
+  background-color: var(--background-color);
+  padding: 2rem;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.semesterContent a {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: var(--text-color);
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
