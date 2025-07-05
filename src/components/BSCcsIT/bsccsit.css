@@ -34,10 +34,10 @@
   filter: brightness(1.1);
 }
 .courseImage p {
-  color: var(--primary-color);
   padding: 1rem;
   font-size: 1.2rem;
   text-shadow: 2px 2px hsla(0, 0%, 100%, 0.14);
+  color: whitesmoke;
 }
 
 .courseImage {
@@ -53,6 +53,7 @@
   width: 60%;
   margin: 1.5rem;
 }
+
 .courseDescription {
   margin-top: 2rem;
 

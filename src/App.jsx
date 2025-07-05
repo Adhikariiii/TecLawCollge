@@ -1,11 +1,9 @@
-import Navbar from "./components/navbar/navbar";
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-//data
+// data
 import college from "./data/college";
 
-//pages
+// pages
 import HomePage from "./components/homepage/homepage";
 import BCA from "./components/BCA/bca";
 import BscCsit from "./components/BSCcsIT/bsccsit";
@@ -14,6 +12,7 @@ import Alumni from "./components/Alumni/alumni";
 import AboutUs from "./components/aboutus/aboutus";
 import Location from "./components/Location/location";
 import Contact from "./components/contact/contact";
+import Courses from "./components/courses/courses";
 
 export default function App() {
   return (
@@ -22,7 +21,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage detail={college} />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/courses" element={<h1>Courses</h1>} />
+          <Route path="/courses" element={<Courses />} />
           <Route path="/courses/BCA" element={<BCA />} />
           <Route path="/courses/BSCcSIT" element={<BscCsit />} />
           <Route path="/courses/BALLB" element={<BALLB />} />

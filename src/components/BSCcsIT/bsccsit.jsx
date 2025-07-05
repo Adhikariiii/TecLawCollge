@@ -86,7 +86,7 @@ export default function BscCsit() {
               BSC CSIT (Bachelor of Science in Computer Science and Information
               Technology.)
             </h1>
-            <p>
+            <p style={{ color: "whitesmoke", fontSize: "1.5rem" }}>
               It's a four-year undergraduate program offered by Tribhuvan
               University (TU) in Nepal. The program focuses on providing
               students with both theoretical and practical knowledge in computer

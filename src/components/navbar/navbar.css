@@ -25,6 +25,11 @@
   font-weight: bold;
   color: var(--accent-color);
 }
+.logo img {
+  height: 4rem;
+  width: auto;
+  border-radius: 50%;
+}
 
 .nav-links {
   display: flex;

@@ -2,6 +2,8 @@ import Navbar from "../navbar/navbar";
 import "./bca.css";
 import computerLab2 from "../../assets/collegeImages/computerlab2.jpg";
 import computerLab3 from "../../assets/collegeImages/computerlab3.jpg";
+import Paper from "@mui/material/Paper";
+import Button from "@mui/material/Button";
 
 import { useState } from "react";
 import Footer from "../footer/footer";
@@ -103,7 +105,8 @@ export default function BCA() {
       <div className="courseDescription">
         <h2>What does a BCA program cover?</h2>
 
-        <div
+        <Paper
+          elevation={4}
           className="courseCovers"
           style={{ background: `url(${computerLab3})` }}
         >
@@ -124,7 +127,7 @@ export default function BCA() {
             </li>
             <p>Understanding computer networks and how systems are managed.</p>
           </ul>
-        </div>
+        </Paper>
       </div>
       <div className="courseDuration">
         <h2>Course Duration</h2>
@@ -132,17 +135,19 @@ export default function BCA() {
         <div className="buttonContainer">
           {Object.keys(semesters).map((semester, index) => {
             return (
-              <button
+              <Button
+                variant="contained"
+                color="success"
                 key={index}
                 className="semesterButton"
                 onClick={() => handleClick(semester)}
               >
                 {semester}
-              </button>
+              </Button>
             );
           })}
           {click && (
-            <div className="semesterContent">
+            <Paper elevation={4} className="semesterContent">
               <ul>
                 <h2>{click}</h2>
                 {semesters[click].map((subject, i) => (
@@ -151,7 +156,7 @@ export default function BCA() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Paper>
           )}
         </div>
       </div>
