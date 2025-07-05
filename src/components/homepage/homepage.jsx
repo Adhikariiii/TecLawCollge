@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
 import ImageSlider from "../imageSlider.jsx/imageslider";
@@ -13,6 +14,8 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Card from "@mui/material/Card";
 import Paper from "@mui/material/Paper";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 
 //style
 import "./homepage.css";
@@ -21,10 +24,51 @@ import "./homepage.css";
 import Lottie from "lottie-react";
 
 import animation from "./animation.json";
+import CssBaseline from "@mui/material/CssBaseline";
+import List from "@mui/material/List";
+
+//arrays
+const whyChooseUsList = [
+  {
+    id: 1,
+    heading: "Discipiline",
+    details:
+      " Discipline in college is the foundation for personal growth and academic excellence. It instills a sense of responsibility, time management, and focus—qualities essential for achieving long-term goals. A disciplined student maintains consistency in learning, respects rules and deadlines, and develops the perseverance needed to overcome challenges and succeed in both academic and professional life.",
+    backgroundColor: "#067BC2",
+  },
+  {
+    id: 2,
+    heading: "Regularity",
+    details:
+      "  Regularity in college plays a vital role in shaping a student's academic journey and overall discipline. Attending classes consistently helps build a strong foundation of knowledge, ensures steady progress, and fosters a habit of commitment. Regular students stay more connected with their studies, participate actively, and are better prepared to achieve their goals with confidence and clarity.",
+    backgroundColor: "#84BCDA",
+  },
+  {
+    id: 3,
+    heading: "Practical Approach",
+    details:
+      " A practical approach in college bridges the gap between theory and real-world application, helping students develop problem-solving skills and hands-on experience. It prepares them to face professional challenges confidently, enhances understanding through active learning, and makes education more relevant and engaging. This approach fosters creativity, critical thinking, and better retention of knowledge, ultimately producing graduates who are ready to contribute effectively in their careers.",
+    backgroundColor: "#ECC30B",
+  },
+  {
+    id: 2,
+    heading: "Team Work",
+    details:
+      "  Teamwork in college teaches students how to collaborate, communicate, and respect diverse perspectives. Working together on projects builds leadership skills, encourages creative problem-solving, and helps distribute responsibilities effectively. It prepares students for the professional world where success often depends on strong cooperation and the ability to work well with others toward common goals.",
+    backgroundColor: "#F37748",
+  },
+];
 
 export default function HomePage({ detail }) {
+  const [buttonClick, setButtonClick] = useState(null);
+
+  const handleClick = (index) => {
+    setButtonClick((prevClick) => (index === prevClick ? null : index));
+  };
+
   return (
     <>
+      <CssBaseline />
       <Navbar />
       <ImageSlider slides={detail} />
 
@@ -85,7 +129,7 @@ export default function HomePage({ detail }) {
               <img src={principalImage} alt="" />
             </div>
             <div className="message">
-              <Typography variant="h6" prop color="textSecondary">
+              <Typography variant="h6" color="textSecondary">
                 The standard of legal education in our country is rudimentary.
                 For the development of educational quality, I strongly believe
                 on materializing thoughts with the intense determination of
@@ -99,17 +143,64 @@ export default function HomePage({ detail }) {
                 incorporating full phase digital facilities including online
                 assignment, on line library services, power point based class
                 discussion and periodic update of the legal development in the
-                country.... I believe NaLC will be the best option for them to
-                pursue standard legal education in the country. The teaching
-                faculty members including professors, associate professors,
-                assisting professors and adjunct faculty members as well
-                administrative members are self-motivated, cultured and
-                professional in their respective jobs.{" "}
+                country.... I believe will be the best option for them to pursue
+                standard legal education in the country. The teaching faculty
+                members including professors, associate professors, assisting
+                professors and adjunct faculty members as well administrative
+                members are self-motivated, cultured and professional in their
+                respective jobs.{" "}
               </Typography>
             </div>
           </Paper>
         </Container>
       </div>
+      <section className="chooseUs">
+        <Typography
+          variant="h2"
+          color="textSecondary"
+          align="center"
+          mt={7}
+          sx={{ fontWeight: "bold" }}
+        >
+          Why Choose Us?
+        </Typography>
+        <div className="grid">
+          {whyChooseUsList.map((list, index) => {
+            return (
+              <Container
+                className="detailsContainer"
+                key={index}
+                style={{ backgroundColor: `${list.backgroundColor}` }}
+              >
+                <Typography variant="h3">{list.id}</Typography>
+                <Typography variant="h3" align="center">
+                  {list.heading}
+                  {buttonClick === index ? (
+                    <RemoveCircleOutlineIcon
+                      onClick={() => {
+                        handleClick(index);
+                      }}
+                    />
+                  ) : (
+                    <AddCircleOutlineIcon
+                      onClick={() => {
+                        handleClick(index);
+                      }}
+                    />
+                  )}
+                  {buttonClick === index && (
+                    <div>
+                      <Typography variant="h5" color="textSecondary">
+                        {list.details}
+                      </Typography>
+                    </div>
+                  )}
+                </Typography>
+              </Container>
+            );
+          })}
+        </div>
+      </section>
 
       <Footer />
     </>

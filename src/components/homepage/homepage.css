@@ -146,11 +146,28 @@ h1 {
 }
 .image {
   margin: 1rem;
+  border-radius: 50%;
 }
 .message {
   margin: 1rem;
 
   width: 80%;
+}
+hr {
+  margin: 1rem 5rem 2rem 5rem;
+  border: 1px solid black;
+}
+.grid {
+  height: 60vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+  margin: 3rem;
+}
+.detailsContainer {
+  border: 2px solid black;
+  width: auto;
+  height: auto;
 }
 
 @media (max-width: 768px) {

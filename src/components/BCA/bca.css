@@ -13,10 +13,15 @@
 }
 .courseContainer {
   width: 100vw;
-  height: 80vh;
+  height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
+}
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .courseImage::before {
   content: "";
@@ -33,39 +38,15 @@
   font-size: 2.5rem;
   filter: brightness(2);
 }
-.courseImage p {
-  color: var(--primary-color);
-  padding: 1rem;
-  font-size: 1.2rem;
-  text-shadow: 2px 2px hsla(0, 0%, 100%, 0.14);
-}
 
-.courseImage {
-  height: 100%;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
 .courseHeading {
   padding: 1rem;
-  height: 50vh;
-  width: 60%;
+  height: 100%;
+  width: 100%;
   margin: 1.5rem;
+  position: absolute;
 }
 
-.courseDescription {
-  margin-top: 2rem;
-
-  display: flex;
-  height: 100vh;
-  align-items: center;
-  flex-direction: column;
-}
-.courseDescription h2 {
-  font-size: 2rem;
-  background-color: white;
-}
 .courseCovers {
   position: relative;
   height: 100%;
@@ -79,12 +60,31 @@
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
-.courseCovers::before {
-  content: "";
-  z-index: -1;
-  inset: 0;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.2);
+hr {
+  margin: 0 5rem 0 5rem;
+}
+.descriptionOfcourse {
+  display: flex;
+  margin: 4rem;
+  height: 100vh;
+  width: auto;
+  display: flex;
+  gap: 0;
+}
+.imageOfCourse {
+  margin: 1rem;
+  height: 100%;
+  width: 50%;
+}
+.imageOfCourse img {
+  height: 70%;
+  width: 100%;
+}
+
+.descOfCourse {
+  margin: 1rem;
+  height: auto;
+  width: auto;
 }
 .courseDuration {
   height: 50vh;

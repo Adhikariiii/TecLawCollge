@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import style from "../imageSlider.jsx/imageslider.module.css";
-
+import Alert from "@mui/material/Alert";
+import CheckIcon from "@mui/icons-material/Check";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
 export default function ImageSlider({ slides }) {
@@ -27,6 +28,11 @@ export default function ImageSlider({ slides }) {
   const handlePrev = () => {
     const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
     scrollToIndex(prevIndex);
+  };
+  const getStarted = () => {
+    <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
+      you've clicked the button
+    </Alert>;
   };
 
   useEffect(() => {
@@ -56,7 +62,7 @@ export default function ImageSlider({ slides }) {
                 degree. It's about widening your knowledge.
               </h3>
               <div className={style.buttonContainer}>
-                <button className={style.button}>
+                <button className={style.button} onClick={() => getStarted}>
                   <span>GET STARTED</span>
                 </button>
                 <button className={style.button}>
