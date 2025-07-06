@@ -28,9 +28,16 @@
   color: var(--secondary-color);
 }
 
-.addressSection,
-.mapSection {
-  margin-bottom: 3rem;
+.addressSection {
+  display: flex;
+}
+.animationSection {
+  border-radius: 10px;
+}
+.animation {
+  height: 20rem;
+  width: 50rem;
+  margin-left: 5rem;
 }
 
 .addressSection h2,

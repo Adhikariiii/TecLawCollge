@@ -4,6 +4,17 @@ import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
 import random from "../../assets/collegeImages/staffroom1.jpg";
 // import random2 from "../../assets/collegeImages/workshop2.jpg";
+import Typography from "@mui/material/Typography";
+
+import Lottie from "lottie-react";
+
+//animation
+import whyus from "./whyUs.json";
+import mission from "./mission.json";
+import values from "./values.json";
+import vision from "./vision.json";
+//style
+import "./aboutus.css";
 
 export default function AboutUs() {
   return (
@@ -14,44 +25,107 @@ export default function AboutUs() {
           <h1>About TechLaw College</h1>
           <p>Empowering the next generation in Technology and Law.</p>
         </header>
-        <div
-          className="image"
-          style={{
-            background: `url(${random}) no-repeat center center`,
-            backgroundSize: "cover",
-          }}
-        >
-          <h1>Why Tec Law College?</h1>
+        <div className="reasonOfChoosing">
+          <div className="annimation">
+            <Lottie animationData={whyus} className="animationIcon" />
+          </div>
+          <div className="heading">
+            <Typography
+              variant="h2"
+              color="textSecondary"
+              mt={19}
+              sx={{ fontWeight: "bold" }}
+            >
+              Why This College?
+            </Typography>
+          </div>
         </div>
+
         <section className="missionSection">
           <h2>Our Mission</h2>
-          <p>
-            At TechLaw College, we aim to bridge the gap between technology and
-            law by offering innovative, interdisciplinary education that
-            prepares students for the challenges of tomorrow. Our programs are
-            designed to create leaders who are both tech-savvy and legally
-            informed.
-          </p>
+          <div className="missionContainer">
+            <div>
+              <Typography variant="h5" color="textSecondary" mt={10}>
+                To provide quality education that blends technology with legal
+                studies, fostering analytical thinking, ethical values, and
+                leadership skills among students to meet the demands of the
+                modern world and contribute to justice, innovation, and social
+                progress.{" "}
+              </Typography>
+            </div>
+            <div elevation={1} className="animation">
+              <Lottie
+                animationData={mission}
+                loop={true}
+                // className="lottieanimation"
+              />
+            </div>
+          </div>
         </section>
         <hr />
+
         <section className="visionSection">
           <h2>Our Vision</h2>
-          <p>
-            To be a center of academic excellence where technology meets justice
-            — empowering students to shape the future with integrity,
-            creativity, and skill.
-          </p>
+
+          <div className="visionContainer">
+            <div elevation={1} className="visionAnimation">
+              <Lottie
+                animationData={vision}
+                loop={true}
+                className="visionAnimationIcon"
+              />
+            </div>
+            <div>
+              <Typography
+                variant="h5"
+                align="center"
+                color="textSecondary"
+                mt={9}
+                mr={9}
+              >
+                To be a pioneering institution that blends technological
+                innovation with legal education, producing future-ready leaders
+                equipped with the skills, ethics, and insight to shape the
+                digital age with justice and responsibility.
+              </Typography>
+            </div>
+          </div>
         </section>
         <hr />
         <section className="valuesSection">
           <h2>Core Values</h2>
-          <ul>
-            <li>Integrity and Ethics</li>
-            <li>Innovation in Education</li>
-            <li>Diversity and Inclusion</li>
-            <li>Community Engagement</li>
-            <li>Lifelong Learning</li>
-          </ul>
+
+          <div className="missionContainer">
+            <div>
+              <Typography variant="h3" color="textSecondary" mt={10}>
+                <ul>
+                  <Typography variant="h5" gutterbottom>
+                    Integrity and Ethics
+                  </Typography>
+                  <Typography variant="h5" gutterbottom>
+                    Innovation in Education
+                  </Typography>
+                  <Typography variant="h5" gutterbottom>
+                    Diversity and Inclusion
+                  </Typography>
+                  <Typography variant="h5" gutterbottom>
+                    Community Engagement
+                  </Typography>
+                  <Typography variant="h5" gutterbottom>
+                    Lifelong Learning
+                  </Typography>
+                </ul>
+              </Typography>
+            </div>
+
+            <div elevation={1} className="animation">
+              <Lottie
+                animationData={values}
+                loop={true}
+                className="annimation"
+              />
+            </div>
+          </div>
         </section>
         <hr />
         <section className="contactSection">

@@ -2,10 +2,22 @@ import React from "react";
 import "./location.css"; // Import corresponding CSS
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
+import Lottie from "lottie-react";
+import location from "./campus.json";
+import worldMap from "../../assets/collegeImages/WorldMapp.svg";
 
 export default function Location() {
   return (
-    <>
+    <div
+      className="mainContainer"
+      style={{
+        backgroundImage: `url(${worldMap})`,
+        backgroundRepeat: "no-repeat",
+        objectFit: "contain",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <Navbar />
       <div className="locationContainer">
         <header className="locationHeader">
@@ -14,13 +26,22 @@ export default function Location() {
         </header>
 
         <section className="addressSection">
-          <h2>Campus Address</h2>
-          <p>
-            📍 TechLaw College <br />
-            Maitidevi Road, Kathmandu, Nepal <br />
-            ✉️ info@techlawcollege.edu.np <br />
-            ☎️ +977-1-1234567
-          </p>
+          <div>
+            <h2>Campus Address</h2>
+            <p>
+              📍 TechLaw College <br />
+              Maitidevi Road, Kathmandu, Nepal <br />
+              ✉️ info@techlawcollege.edu.np <br />
+              ☎️ +977-1-1234567
+            </p>
+          </div>
+          <div className="animationSection">
+            <Lottie
+              animationData={location}
+              loop={true}
+              className="animation"
+            />
+          </div>
         </section>
 
         <section className="mapSection">
@@ -40,6 +61,6 @@ export default function Location() {
         </section>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }

@@ -65,3 +65,32 @@ h1 {
   -webkit-background-clip: text;
   background-image: linear-gradient(to right, yellow, gold, orange, gray);
 }
+.reasonOfChoosing {
+  display: flex;
+  margin: 2rem;
+  height: 50vh;
+  padding: 3px;
+}
+
+.annimation {
+  height: 100%;
+  width: 50%;
+}
+.animationIcon {
+  height: 100%;
+}
+.visionContainer {
+  display: flex;
+  margin: 2rem;
+  height: 50vh;
+  padding: 3px;
+}
+
+.visionAnimation {
+  height: 100%;
+  width: 100%;
+}
+.visionAnimationIcon {
+  height: 80%;
+  width: 80%;
+}
