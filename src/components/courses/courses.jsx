@@ -17,6 +17,8 @@ import Button from "@mui/material/Button";
 export default function Courses() {
   return (
     <>
+      {window.scrollTo(0, 0)}
+
       <div
         className="mainContainer"
         style={{

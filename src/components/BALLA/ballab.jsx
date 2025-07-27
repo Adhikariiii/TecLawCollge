@@ -1,10 +1,19 @@
 import Navbar from "../navbar/navbar";
-import "./ballab.css";
-import ballb1 from "../../assets/collegeImages/classroom4.jpg";
-import ballab2 from "../../assets/collegeImages/classroom5.jpg";
-import Footer from "../footer/footer";
+import "../BCA/bca.css";
+import computerLab2 from "../../assets/collegeImages/computerlab2.jpg";
+
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
 
 import { useState } from "react";
+
+import Footer from "../footer/footer";
+import Lottie from "lottie-react";
+
+import LLB from "./LLB.json";
+import background from "../../assets/collegeImages/background.jpg";
+import ballb from "../../assets/collegeImages/ballb.png";
+import llb from "./ballb.json";
 
 export default function BALLB() {
   const [click, setClick] = useState(false);
@@ -111,99 +120,138 @@ export default function BALLB() {
   const handleClick = (semester) => {
     setClick((prevClick) => (prevClick === semester ? false : semester));
   };
+
   return (
-    <>
+    <div>
       <Navbar />
       <div className="courseContainer">
-        <div className="courseImage" style={{ background: `url(${ballb1})` }}>
-          <div className="courseHeading">
-            <h1>The Bachelor of Arts and Bachelor of Laws (BALLB)</h1>
-            <p>
-              The Bachelor of Arts and Bachelor of Laws (BALLB) program at
-              Tribhuvan University (TU) covers a wide range of subjects,
-              integrating legal studies with social sciences and humanities. It
-              aims to equip students with knowledge in areas like constitutional
-              law, criminal law, contract law, and human rights, alongside
-              skills in legal research, analysis, and communication. The program
-              also explores the legal environment in various sectors such as
-              trade, finance, and social security
-            </p>
+        <Typography
+          variant="h2"
+          sx={{
+            color: "#ffc107",
+            fontWeight: 800,
+            fontSize: { xs: "2rem", md: "3.5rem" },
+            mb: 2,
+            textShadow: "2px 2px 8px rgba(0,0,0,0.8)",
+          }}
+        >
+          BA LLB (Bachelor of Arts and Bachelor of Laws)
+        </Typography>
+      </div>
+
+      <div
+        className="mainContainer"
+        style={{
+          backgroundImage: `url(${background})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="descContainer">
+          <div className="animation">
+            <Lottie animationData={LLB} loop={true} className="animated" />
+          </div>
+
+          <div className="shortDescirption">
+            <Typography
+              variant="h5"
+              color="textSecondary"
+              sx={{
+                fontWeight: 400,
+                lineHeight: 1.8,
+                maxWidth: "800px",
+                marginInline: "auto",
+                marginTop: "5rem",
+              }}
+            >
+              BA LLB stands for Bachelor of Arts and Bachelor of Laws. It is a
+              five-year integrated undergraduate degree program that combines
+              the study of arts and law. This program provides a comprehensive
+              understanding of both legal and non-legal subjects, preparing
+              students for careers in the legal field and related areas.
+            </Typography>
           </div>
         </div>
-      </div>
-      <div className="courseDescription">
-        <h2>What does a BALLB program cover?</h2>
 
-        <div className="courseCovers" style={{ background: `url(${ballab2})` }}>
-          <ul>
-            <li>
-              <h3>Core Legal Subjects:</h3>
-            </li>
-            <p>
-              Constitutional Law, Criminal Law, Contract Law, Jurisprudence,
-              Legal Theory, Procedural Law, and Administrative Law.
-            </p>
-            <li>
-              <h3>Social Sciences and Humanities:</h3>
-            </li>
-            <p>
-              Political Science, History, Sociology, Economics, and English (as
-              a medium of instruction).{" "}
-            </p>
-            <li>
-              <h3>Legal Systems:</h3>
-            </li>
-            <p>
-              Nepalese Legal System, Comparative Legal Systems, and
-              International Law.{" "}
-            </p>
-            <li>
-              <h3>Practical Skills:</h3>
-            </li>
-            <p>
-              Legal Research, Legal Writing, Moot Court, and Client Counseling.
-            </p>
-            <li>
-              <h3>Interdisciplinary Areas: </h3>
-            </li>
-            <p>Law and Society, Law and Economics, Law and Technology. </p>
-          </ul>
+        <Typography variant="h2" color="textSecondary" align="center" mt={13}>
+          <hr />
+          What does a BA LLB program cover?
+        </Typography>
+
+        <div className="descriptionOfcourse">
+          <div className="descOfCourse">
+            <Paper elevation={4} className="courseCovers" color="textPrimary">
+              <ul>
+                <li>
+                  <h3>Integrated Degree:</h3>
+                </li>
+                <p>
+                  It combines the study of arts subjects (like political
+                  science, history, sociology, economics) with the study of law.
+                </p>
+
+                <li>
+                  <h3>Comprehensive Curriculum:</h3>
+                </li>
+                <p>
+                  The program covers a wide range of legal subjects, including
+                  constitutional law, criminal law, contract law, and more,
+                  alongside arts and humanities.
+                </p>
+
+                <li>
+                  <h3>Skill Development:</h3>
+                </li>
+                <p>
+                  It aims to develop students' legal knowledge, analytical
+                  skills, critical thinking, and communication abilities.
+                </p>
+              </ul>
+            </Paper>
+          </div>
+
+          <div className="imageOfCourse">
+            <Lottie animationData={llb} loop={true} />
+          </div>
         </div>
-      </div>
-      <div className="courseDuration">
-        <h2>Course Duration</h2>
-        <p>
-          B.A.LL.B. Programme. Those students who have completed +2 or
-          equivalent can apply for this programme. This is a five year Course
-          with 10 semesters.
-        </p>
-        <div className="buttonContainer">
-          {Object.keys(semesters).map((semester, index) => {
-            return (
+
+        <div className="courseDurationn">
+          <h2>Course Duration</h2>
+          <p>BA LLB is a 5 years course which are divided into ten semesters</p>
+
+          <div className="buttonContainer">
+            {Object.keys(semesters).map((semester, index) => (
               <button
+                variant="contained"
+                color="success"
                 key={index}
                 className="semesterButton"
                 onClick={() => handleClick(semester)}
               >
                 {semester}
               </button>
-            );
-          })}
-        </div>
-        {click && (
-          <div className="semesterContent">
-            <ul>
-              <h2>{click}</h2>
-              {semesters[click].map((subject, i) => (
-                <li key={i}>
-                  <a href="#">{subject}</a>
-                </li>
-              ))}
-            </ul>
+            ))}
           </div>
-        )}
+
+          {click && (
+            <div className="semesterContent">
+              <Paper elevation={4} className="semesterDetails">
+                <ul>
+                  <h2>{click}</h2>
+                  {semesters[click].map((subject, i) => (
+                    <li key={i}>
+                      <a href="#">{subject}</a>
+                    </li>
+                  ))}
+                </ul>
+              </Paper>
+            </div>
+          )}
+        </div>
+
+        <Footer />
       </div>
-      <Footer />
-    </>
+    </div>
   );
 }

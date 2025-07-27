@@ -1,10 +1,16 @@
 import Navbar from "../navbar/navbar";
-import "./bsccsit.css";
+import "../BCA/bca.css";
 import computerLab2 from "../../assets/collegeImages/computerlab2.jpg";
-import computerLab3 from "../../assets/collegeImages/computerlab3.jpg";
-import Footer from "../footer/footer";
 
-import { useState } from "react";
+import Paper from "@mui/material/Paper";
+
+import Typography from "@mui/material/Typography";
+
+import { useEffect, useState } from "react";
+import Footer from "../footer/footer";
+import Lottie from "lottie-react";
+import coding from "../BCA/coding.json";
+import background from "../../assets/collegeImages/background.jpg";
 
 export default function BscCsit() {
   const [click, setClick] = useState(false);
@@ -73,87 +79,136 @@ export default function BscCsit() {
   const handleClick = (semester) => {
     setClick((prevClick) => (prevClick === semester ? false : semester));
   };
+
   return (
-    <>
+    <div
+      style={{
+        minHeight: "100vh",
+        backgroundImage: `url(${background})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <Navbar />
       <div className="courseContainer">
-        <div
-          className="courseImage"
-          style={{ background: `url(${computerLab2})` }}
+        <Typography
+          variant="h2"
+          sx={{
+            color: "#f6f6eecd",
+            fontWeight: 800,
+            fontSize: { xs: "2rem", md: "3.5rem" },
+            mb: 2,
+            textShadow: "2px 2px 8px rgba(0,0,0,0.8)",
+          }}
         >
-          <div className="courseHeading">
-            <h1>
-              BSC CSIT (Bachelor of Science in Computer Science and Information
-              Technology.)
-            </h1>
-            <p style={{ color: "whitesmoke", fontSize: "1.5rem" }}>
-              It's a four-year undergraduate program offered by Tribhuvan
-              University (TU) in Nepal. The program focuses on providing
-              students with both theoretical and practical knowledge in computer
-              science and information technology, enabling them to address
-              real-world problems in the IT industry.
-            </p>
+          BSc CSIT (Bachelor of Science in Computer Science and Information
+          Technology)
+        </Typography>
+      </div>
+
+      <div className="mainContainer">
+        <div className="descContainer">
+          <div className="animation">
+            <Lottie animationData={coding} loop={true} className="animated" />
+          </div>
+          <div className="shortDescirption">
+            <Typography
+              variant="h5"
+              color="textSecondary"
+              sx={{
+                fontWeight: 400,
+                lineHeight: 1.8,
+                maxWidth: "800px",
+                marginInline: "auto",
+                marginTop: "5rem",
+              }}
+            >
+              BSc CSIT stands for Bachelor of Science in Computer Science and
+              Information Technology. It is a four-year undergraduate program
+              affiliated with Tribhuvan University in Nepal. The program focuses
+              on providing students with a strong foundation in both computer
+              science principles and practical applications of information
+              technology.
+            </Typography>
           </div>
         </div>
-      </div>
-      <div className="courseDescription">
-        <h2>What does a BSC CSIT program cover?</h2>
 
-        <div
-          className="courseCovers"
-          style={{ background: `url(${computerLab3})` }}
-        >
-          <ul>
-            <li>
-              <h3>Software development</h3>
-            </li>
-            <p>
-              Programming languages (like C, C++, Java), database management,
-              operating systems, and software engineering
-            </p>
-            <li>
-              <h3>Web development</h3>
-            </li>
-            <p>HTML, CSS, JavaScript, and related technologies.</p>
-            <li>
-              <h3>Network administration</h3>
-            </li>
-            <p>Understanding computer networks and how systems are managed.</p>
-          </ul>
+        <Typography variant="h2" color="textSecondary" align="center" mt={13}>
+          <hr />
+          What does a BSc CSIT program cover?
+        </Typography>
+
+        <div className="descriptionOfcourse">
+          <div className="imageOfCourse">
+            <img src={computerLab2} alt="labImgae" />
+          </div>
+          <div className="descOfCourse">
+            <Paper elevation={4} className="courseCovers" color="textPrimary">
+              <ul>
+                <li>
+                  <h3>Computer Science Fundamentals:</h3>
+                </li>
+                <p>
+                  This includes core areas like programming languages,
+                  algorithms, data structures, and theoretical computer science.
+                </p>
+                <li>
+                  <h3>Information Technology:</h3>
+                </li>
+                <p>
+                  This covers areas like database management, networking,
+                  software development, and systems analysis.
+                </p>
+                <li>
+                  <h3>Mathematics and Physics:</h3>
+                </li>
+                <p>
+                  These are foundational subjects that provide the necessary
+                  background for understanding computer science and IT
+                  principles.
+                </p>
+              </ul>
+            </Paper>
+          </div>
         </div>
-      </div>
-      <div className="courseDuration">
-        <h2>Course Duration</h2>
-        <p>
-          BSC CSIT is a 4 years course which are divided into eight semesters
-        </p>
-        <div className="buttonContainer">
-          {Object.keys(semesters).map((semester, index) => {
-            return (
+
+        <div className="courseDuration">
+          <h2>Course Duration</h2>
+          <p>
+            BscCsIT is a 4 years course which are divided into eight semesters
+          </p>
+          <div className="buttonContainer">
+            {Object.keys(semesters).map((semester, index) => (
               <button
+                variant="contained"
+                color="success"
                 key={index}
                 className="semesterButton"
                 onClick={() => handleClick(semester)}
               >
                 {semester}
               </button>
-            );
-          })}
-          {click && (
-            <div className="semesterContent">
-              <ul>
-                <h2>{click}</h2>
-                {semesters[click].map((subject, i) => (
-                  <li key={i}>
-                    <a href="#">{subject}</a>
-                  </li>
-                ))}
-              </ul>
+            ))}
+            <div className="sem">
+              {click && (
+                <Paper elevation={4} className="semesterContent">
+                  <ul>
+                    <h2>{click}</h2>
+                    {semesters[click].map((subject, i) => (
+                      <li key={i}>
+                        <a href="#">{subject}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </Paper>
+              )}
             </div>
-          )}
+          </div>
+
+          <Footer />
         </div>
       </div>
-      <Footer />
-    </>
+    </div>
   );
 }
