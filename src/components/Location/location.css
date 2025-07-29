@@ -30,6 +30,8 @@
 
 .addressSection {
   display: flex;
+  height: 30vh;
+  width: 30vw;
 }
 .animationSection {
   border-radius: 10px;
