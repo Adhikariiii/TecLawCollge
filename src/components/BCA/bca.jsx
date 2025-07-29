@@ -1,19 +1,17 @@
 import Navbar from "../navbar/navbar";
 import "./bca.css";
-
 import computerLab2 from "../../assets/collegeImages/computerlab2.jpg";
-import computerLab3 from "../../assets/collegeImages/computerlab3.jpg";
 
 import Paper from "@mui/material/Paper";
-
 import Typography from "@mui/material/Typography";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
 import Footer from "../footer/footer";
-import Lottie from "lottie-react";
-import coding from "./coding.json";
-import it from "../../assets/collegeImages/computer.png";
+
 import background from "../../assets/collegeImages/background.jpg";
+import Lottie from "lottie-react";
+import computerLottie from "./computer.json";
 
 export default function BCA() {
   const [click, setClick] = useState(false);
@@ -81,46 +79,52 @@ export default function BCA() {
   const handleClick = (semester) => {
     setClick((prevClick) => (prevClick === semester ? false : semester));
   };
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
   return (
-    <>
+    <div>
+      <Navbar />
       <div
+        className="mainContainer"
         style={{
           backgroundImage: `url(${background})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="mainContainer"
       >
-        <Navbar />
-
-        <div className="courseContainer">
-          <Typography
-            variant="h2"
-            sx={{
-              color: "#ffc107",
-              fontWeight: 800,
-              fontSize: { xs: "2rem", md: "3.5rem" },
-              mb: 2,
-              textShadow: "2px 2px 8px rgba(0,0,0,0.8)",
-            }}
-          >
-            BCA (Bachelor of Computer Application)
-          </Typography>
-          <img src={it} className="animated" style={{ width: "80%" }} />
-        </div>
-
-        <div className="mainContainer">
+        <Typography
+          variant="h2"
+          sx={{
+            color: "#ffc107",
+            fontWeight: 800,
+            fontSize: { xs: "2rem", md: "5rem" },
+            mb: 2,
+            textShadow: "2px 2px 8px rgba(0,0,0,0.8)",
+          }}
+        >
+          BCA (Bachelor of Computer Application)
+        </Typography>
+        <div
+          className="mainContainer"
+          style={{
+            backgroundImage: `url(${background})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div className="descContainer">
             <div className="animation">
-              <Lottie animationData={coding} loop={true} className="animated" />
+              <img
+                src={computerLab2}
+                alt="labImage"
+                style={{ height: "300px", width: "600px", marginTop: "2rem" }}
+              />
             </div>
 
             <div className="shortDescirption">
               <Typography
+                align="center"
                 variant="h5"
                 color="textSecondary"
                 sx={{
@@ -147,42 +151,43 @@ export default function BCA() {
           </Typography>
 
           <div className="descriptionOfcourse">
-            <div className="imageOfCourse">
-              <img src={computerLab2} alt="labImgae" />
-            </div>
-
             <div className="descOfCourse">
-              <Paper elevation={4} className="courseCovers" color="textPrimary">
+              <Paper elevation={4} className="courseCovers">
                 <ul>
                   <li>
                     <h3>Core computer science concepts</h3>
+                    <p>
+                      Programming languages (like C, C++, Java), database
+                      management, operating systems, and software engineering
+                    </p>
                   </li>
-                  <p>
-                    Programming languages (like C, C++, Java), database
-                    management, operating systems, and software engineering
-                  </p>
-
                   <li>
                     <h3>Web development</h3>
+                    <p>HTML, CSS, JavaScript, and related technologies.</p>
                   </li>
-                  <p>HTML, CSS, JavaScript, and related technologies.</p>
-
                   <li>
-                    <h3>Networking and system administration:</h3>
+                    <h3>Networking and system administration</h3>
+                    <p>
+                      Understanding computer networks and how systems are
+                      managed.
+                    </p>
                   </li>
-                  <p>
-                    Understanding computer networks and how systems are managed.
-                  </p>
                 </ul>
               </Paper>
             </div>
+
+            <div className="imageOfCourse">
+              <Lottie animationData={computerLottie} loop={true} />
+            </div>
           </div>
 
-          <div className="courseDuration">
-            <h2>Course Duration</h2>
-            <p>
-              BCA is a 4 years course which are divided into eight semesters
-            </p>
+          <div className="courseDurationn">
+            <Typography align="center" variant="h3" color="textSecondary">
+              Course Duration
+            </Typography>
+            <Typography align="center" variant="h5" color="textSecondary">
+              BCA is a 4-year course divided into eight semesters
+            </Typography>
 
             <div className="buttonContainer">
               {Object.keys(semesters).map((semester, index) => (
@@ -196,10 +201,12 @@ export default function BCA() {
                   {semester}
                 </button>
               ))}
+            </div>
 
-              {click && (
-                <Paper elevation={4} className="semesterContent">
-                  <ul className="lists">
+            {click && (
+              <div className="semesterContent">
+                <Paper elevation={4} className="semesterDetails">
+                  <ul>
                     <h2>{click}</h2>
                     {semesters[click].map((subject, i) => (
                       <li key={i}>
@@ -208,12 +215,13 @@ export default function BCA() {
                     ))}
                   </ul>
                 </Paper>
-              )}
-            </div>
-            <Footer />
+              </div>
+            )}
           </div>
+
+          <Footer />
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -11,6 +11,10 @@
   box-sizing: border-box;
   font-family: "ubuntu", sans-serif;
 }
+.mainContainer {
+  height: 100%;
+  width: 100%;
+}
 .courseContainer {
   width: 100vw;
   height: 100vh;
@@ -128,6 +132,18 @@ hr {
 .missionContainer {
   display: flex;
 }
+.buttonContainer {
+  margin-top: 2rem;
+  margin-right: 6rem;
+  margin-left: 6rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.sem {
+  height: auto;
+  width: auto;
+  margin: ;
+}
 .semesterButton {
   gap: 1rem;
   margin: 1rem;
@@ -151,31 +167,30 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: auto;
-  max-height: 60vh;
-  overflow-y: auto;
-
+  height: 40vh;
   width: 30rem;
   margin-left: 50%;
   background-color: var(--background-color);
   padding: 2rem;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-  margin: 5rem;
-}
-.semContentContainer {
-  margin: 10rem;
+  margin-bottom: 5rem;
 }
 .semesterContent a {
   font-size: 1.2rem;
   line-height: 2rem;
   color: var(--text-color);
 }
-.lists {
-  margin: 5rem;
+.semesterContent a:hover {
+  color: var(--accent-color);
+  text-decoration: none;
 }
-Footer {
-  width: 100vw;
-  bottom: 0;
+
+.courseDuration {
+  height: 100vh;
+}
+a {
+  font-size: 1.2rem;
+  list-style-type: none;
 }
 @keyframes float {
   0% {

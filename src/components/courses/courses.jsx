@@ -17,8 +17,6 @@ import Button from "@mui/material/Button";
 export default function Courses() {
   return (
     <>
-      {window.scrollTo(0, 0)}
-
       <div
         className="mainContainer"
         style={{
@@ -30,7 +28,6 @@ export default function Courses() {
         }}
       >
         <Navbar />
-
         <div className="courseDisplay">
           <img src={research} alt="researching" />
 
@@ -46,11 +43,10 @@ export default function Courses() {
             </Typography>
           </div>
         </div>
-
         <div className="ourPrograms">
           <div className="programs">
             <Link to={"/courses/BCA"}>
-              <div className="programCard">
+              <div className="programCard" style={{ backgroundColor: "white" }}>
                 <img src={BCA} alt="BCA Program" />
                 <h3>BCA(Bachelor of Computer Application)</h3>
               </div>
@@ -58,7 +54,7 @@ export default function Courses() {
           </div>
           <div className="programs">
             <Link to={"/courses/BscCsit"}>
-              <div className="programCard">
+              <div className="programCard" style={{ backgroundColor: "white" }}>
                 <img src={BScCsit} alt="BCA Program" />
                 <h3>
                   {" "}
@@ -70,7 +66,7 @@ export default function Courses() {
           </div>
           <div className="programs">
             <Link to={"/courses/BALLB"}>
-              <div className="programCard">
+              <div className="programCard" style={{ backgroundColor: "white" }}>
                 <img src={BALLB} alt="BALLB Program" />
                 <h3>BALLB(Bachelor of Arts Bachelor of Laws)</h3>
               </div>

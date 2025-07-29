@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   FaFacebookF,
   FaTwitter,
@@ -12,7 +13,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footerTop">
         <div className="footerBrand">
-          <img src={""} alt="Tech Law College" className="footerLogo" />
+          {/* <img src={""} alt="Tech Law College" className="footerLogo" /> */}
           <p>
             Tech Law College bridges the gap between law and technology,
             nurturing future-ready professionals with innovation and integrity.

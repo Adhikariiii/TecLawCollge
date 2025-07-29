@@ -8,12 +8,12 @@ import Typography from "@mui/material/Typography";
 import { useState } from "react";
 
 import Footer from "../footer/footer";
-import Lottie from "lottie-react";
 
-import LLB from "./LLB.json";
 import background from "../../assets/collegeImages/background.jpg";
-import ballb from "../../assets/collegeImages/ballb.png";
-import llb from "./ballb.json";
+import ballb from "../../assets/collegeImages/classroom5.jpg";
+import Lottie from "lottie-react";
+import computerLottie from "./ballb.json";
+import law from "./llb.json";
 
 export default function BALLB() {
   const [click, setClick] = useState(false);
@@ -124,21 +124,6 @@ export default function BALLB() {
   return (
     <div>
       <Navbar />
-      <div className="courseContainer">
-        <Typography
-          variant="h2"
-          sx={{
-            color: "#ffc107",
-            fontWeight: 800,
-            fontSize: { xs: "2rem", md: "3.5rem" },
-            mb: 2,
-            textShadow: "2px 2px 8px rgba(0,0,0,0.8)",
-          }}
-        >
-          BA LLB (Bachelor of Arts and Bachelor of Laws)
-        </Typography>
-      </div>
-
       <div
         className="mainContainer"
         style={{
@@ -148,109 +133,138 @@ export default function BALLB() {
           backgroundPosition: "center",
         }}
       >
-        <div className="descContainer">
-          <div className="animation">
-            <Lottie animationData={LLB} loop={true} className="animated" />
-          </div>
-
-          <div className="shortDescirption">
-            <Typography
-              variant="h5"
-              color="textSecondary"
-              sx={{
-                fontWeight: 400,
-                lineHeight: 1.8,
-                maxWidth: "800px",
-                marginInline: "auto",
-                marginTop: "5rem",
-              }}
-            >
-              BA LLB stands for Bachelor of Arts and Bachelor of Laws. It is a
-              five-year integrated undergraduate degree program that combines
-              the study of arts and law. This program provides a comprehensive
-              understanding of both legal and non-legal subjects, preparing
-              students for careers in the legal field and related areas.
-            </Typography>
-          </div>
-        </div>
-
-        <Typography variant="h2" color="textSecondary" align="center" mt={13}>
-          <hr />
-          What does a BA LLB program cover?
+        <Typography
+          variant="h2"
+          sx={{
+            color: "#ffc107",
+            fontWeight: 800,
+            fontSize: { xs: "2rem", md: "3rem" },
+            mb: 2,
+            textShadow: "2px 2px 8px rgba(0,0,0,0.8)",
+          }}
+        >
+          BA LLB (Bachelor of Arts and Bachelor of Laws)
         </Typography>
+        <div
+          className="mainContainer"
+          style={{
+            backgroundImage: `url(${background})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="descContainer">
+            <div className="animation">
+              <Lottie animationData={law} loop={true} />
+            </div>
 
-        <div className="descriptionOfcourse">
-          <div className="descOfCourse">
-            <Paper elevation={4} className="courseCovers" color="textPrimary">
-              <ul>
-                <li>
-                  <h3>Integrated Degree:</h3>
-                </li>
-                <p>
-                  It combines the study of arts subjects (like political
-                  science, history, sociology, economics) with the study of law.
-                </p>
-
-                <li>
-                  <h3>Comprehensive Curriculum:</h3>
-                </li>
-                <p>
-                  The program covers a wide range of legal subjects, including
-                  constitutional law, criminal law, contract law, and more,
-                  alongside arts and humanities.
-                </p>
-
-                <li>
-                  <h3>Skill Development:</h3>
-                </li>
-                <p>
-                  It aims to develop students' legal knowledge, analytical
-                  skills, critical thinking, and communication abilities.
-                </p>
-              </ul>
-            </Paper>
-          </div>
-
-          <div className="imageOfCourse">
-            <Lottie animationData={llb} loop={true} />
-          </div>
-        </div>
-
-        <div className="courseDurationn">
-          <h2>Course Duration</h2>
-          <p>BA LLB is a 5 years course which are divided into ten semesters</p>
-
-          <div className="buttonContainer">
-            {Object.keys(semesters).map((semester, index) => (
-              <button
-                variant="contained"
-                color="success"
-                key={index}
-                className="semesterButton"
-                onClick={() => handleClick(semester)}
+            <div className="shortDescirption">
+              <Typography
+                align="center"
+                variant="h5"
+                color="textSecondary"
+                sx={{
+                  fontWeight: 400,
+                  lineHeight: 1.8,
+                  maxWidth: "800px",
+                  marginInline: "auto",
+                  marginTop: "5rem",
+                }}
               >
-                {semester}
-              </button>
-            ))}
+                BSc CSIT stands for Bachelor of Science in Computer Science and
+                Information Technology. It is a four-year undergraduate program
+                affiliated with Tribhuvan University in Nepal. The program
+                focuses on providing students with a strong foundation in both
+                computer science principles and practical applications of
+                information technology.
+              </Typography>
+            </div>
           </div>
 
-          {click && (
-            <div className="semesterContent">
-              <Paper elevation={4} className="semesterDetails">
+          <Typography variant="h2" color="textSecondary" align="center" mt={13}>
+            <hr />
+            What does a BALLB program cover?
+          </Typography>
+
+          <div className="descriptionOfcourse">
+            <div className="descOfCourse">
+              <Paper elevation={4} className="courseCovers" color="textPrimary">
                 <ul>
-                  <h2>{click}</h2>
-                  {semesters[click].map((subject, i) => (
-                    <li key={i}>
-                      <a href="#">{subject}</a>
-                    </li>
-                  ))}
+                  <li>
+                    <h3>Integrated Degree:</h3>
+                  </li>
+                  <p>
+                    It combines the study of arts subjects (like political
+                    science, history, sociology, economics) with the study of
+                    law.
+                  </p>
+
+                  <li>
+                    <h3>Comprehensive Curriculum:</h3>
+                  </li>
+                  <p>
+                    The program covers a wide range of legal subjects, including
+                    constitutional law, criminal law, contract law, and more,
+                    alongside arts and humanities.
+                  </p>
+
+                  <li>
+                    <h3>Skill Development:</h3>
+                  </li>
+                  <p>
+                    It aims to develop students' legal knowledge, analytical
+                    skills, critical thinking, and communication abilities.
+                  </p>
                 </ul>
               </Paper>
             </div>
-          )}
-        </div>
 
-        <Footer />
+            <div className="imageOfCourse">
+              <Lottie animationData={computerLottie} loop={true} />
+            </div>
+          </div>
+
+          <div className="courseDurationn">
+            <Typography align="center" variant="h3" color="textSecondary">
+              Course Duration
+            </Typography>
+            <Typography align="center" variant="h5" color="textSecondary">
+              BALLB is a 5-year course divided into eight semesters
+            </Typography>
+
+            <div className="buttonContainer">
+              {Object.keys(semesters).map((semester, index) => (
+                <button
+                  variant="contained"
+                  color="success"
+                  key={index}
+                  className="semesterButton"
+                  onClick={() => handleClick(semester)}
+                >
+                  {semester}
+                </button>
+              ))}
+            </div>
+
+            {click && (
+              <div className="semesterContent">
+                <Paper elevation={4} className="semesterDetails">
+                  <ul>
+                    <h2>{click}</h2>
+                    {semesters[click].map((subject, i) => (
+                      <li key={i}>
+                        <a href="#">{subject}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </Paper>
+              </div>
+            )}
+          </div>
+
+          <Footer />
+        </div>
       </div>
     </div>
   );
